@@ -106,7 +106,7 @@ def data_push(data_url):
                 pingindex = np.argmax(stream[0].data[int(stratpoint * samp_rate):int((stratpoint + 1) * samp_rate)])
                 pingtimes[stratpoint] = (t_start + stratpoint + pingindex * stream[0].stats.delta)
             # Filter Data+Plot Spectrogram+Save Image and Audio
-            step_size = 5  # for calculating the rms pressure and ploting the spectrogtam
+            step_size = 10  # for calculating the rms pressure and ploting the spectrogtam
             wlen = 0.056  # bin size in sec
             nfft = int(_nearest_pow_2(wlen * samp_rate))  # number of fft points of each bin
             per_lap = 0.995      # percentage of overlap
